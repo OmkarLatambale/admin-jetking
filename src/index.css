@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --brand-color: #b89cff;
+  --brand-hover: #cebaff;
+  --brand-dark: #0c0915;
+  --brand-mid: #191426;
+  --brand-light: #8d73ea;
+  --card-bg: #221a34;
+  --text-primary: #f5f1ff;
+  --text-secondary: #b9b0d2;
+  --border-color: #3b3052;
+}
+
+* {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(184, 156, 255, 0.16), transparent 32%),
+    linear-gradient(135deg, #0c0915 0%, #161022 50%, #241938 100%);
+  color: var(--text-primary);
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* for cursor-pointer */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}

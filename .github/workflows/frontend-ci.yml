@@ -1,0 +1,39 @@
+name: Deploy Jetking Admin to Client EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: |
+            ${{ secrets.EC2_CLIENT_SSH_KEY }}
+
+      - name: Deploy to Client Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_CLIENT_HOST }} << 'EOF'
+
+            cd /home/ec2-user/admin/jetkingAdmin
+
+            git fetch origin
+            git reset --hard origin/main
+
+            npm install
+            npm run build
+
+            sudo nginx -t
+            sudo systemctl reload nginx
+
+            echo "CLIENT DEPLOYMENT SUCCESSFUL"
+
+          EOF
