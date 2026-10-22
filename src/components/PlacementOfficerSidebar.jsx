@@ -22,7 +22,7 @@ const PlacementOfficerSidebar = () => {
         {/* Logo */}
         <div className="p-1 border-b border-white/10 flex items-center backdrop-blur-sm">
           <img
-            src="https://interviewbot-bucket.s3.ap-south-1.amazonaws.com/job-descriptions/Jetking_Logo-new.png"
+            src={import.meta.env.VITE_APP_LOGO_URL}
             alt="Logo"
             className="h-17 mr-[-8px] rounded-md p-2"
           />

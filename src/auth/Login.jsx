@@ -53,7 +53,7 @@ const Login = () => {
         <div className="w-full md:w-1/2 p-8">
           <div className="flex justify-center mb-2">
             <img
-              src=" https://interviewbot-bucket.s3.ap-south-1.amazonaws.com/job-descriptions/Jetking_Logo-new.png"
+              src={import.meta.env.VITE_APP_LOGO_URL}
               alt="Jetking"
               className="h-10"
             />
@@ -188,7 +188,7 @@ const Login = () => {
 
         <div className="hidden md:flex w-1/2 bg-gradient-to-br from-[#120d1f] via-[#1c1630] to-[#2a2140] items-center justify-center border-l border-[#3b3052]">
           <img
-            src="https://interviewbot-bucket.s3.ap-south-1.amazonaws.com/job-descriptions/WhatsApp+Image+2026-09-11+at+11.02.37+PM.jpeg"
+            src={import.meta.env.VITE_LOGIN_BANNER_URL}
             alt="Interview Illustration"
             className="max-w-sm drop-shadow-md"
           />
